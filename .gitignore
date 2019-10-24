@@ -1,6 +1,6 @@
 .DS_Store
-./statics/node_modules/
-./statics/dist/
+./statics/node_modules/*
+./statics/dist/*
 ./statics/package-lock.json
 npm-debug.log*
 yarn-debug.log*
