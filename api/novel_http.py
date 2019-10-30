@@ -12,6 +12,10 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True)
 app.config['JSON_AS_ASCII'] = False
 
+@app.route('/', methods=['GET'])
+def test():
+    return jsonify({'status':'True','message':'Hello world'})
+
 @app.route('/search_novel', methods=['POST', 'GET'])
 def search_novel():
     data = request.get_data()
@@ -54,4 +58,4 @@ def get_novel_chapter_content():
         return jsonify({ 'status': 'False', 'message': '小说章节不能为空' })
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0',port=8090,debug=True)
+    app.run(host='127.0.0.1',port=8090,debug=True)

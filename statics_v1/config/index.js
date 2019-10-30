@@ -11,21 +11,31 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     proxyTable: {
-      '/api': {
-        target: 'http://api.zhuishushenqi.com',//设置你调用的接口域名和端口号
-        changeOrigin: true,     //跨域
-        pathRewrite: {
-          '^/api': '/'          //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://10.1.5.11:8080/xxx/duty?time=2017-07-07 14:57:22'，直接写‘/api/xxx/duty?time=2017-07-07 14:57:22’即可
-        }
+      // '/api': {
+      //   target: 'http://api.zhuishushenqi.com',//设置你调用的接口域名和端口号
+      //   changeOrigin: true,     //跨域
+      //   pathRewrite: {
+      //     '^/api': '/'          //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://10.1.5.11:8080/xxx/duty?time=2017-07-07 14:57:22'，直接写‘/api/xxx/duty?time=2017-07-07 14:57:22’即可
+      //   }
 
-      },
-      '/chapter': {
-        target: 'http://chapter2.zhuishushenqi.com',//设置你调用的接口域名和端口号
-        changeOrigin: true,     //跨域
-        pathRewrite: {
-          '^/chapter': '/chapter'          //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://10.1.5.11:8080/xxx/duty?time=2017-07-07 14:57:22'，直接写‘/api/xxx/duty?time=2017-07-07 14:57:22’即可
-        }
+      // },
+      // '/chapter': {
+      //   target: 'http://chapter2.zhuishushenqi.com',//设置你调用的接口域名和端口号
+      //   changeOrigin: true,     //跨域
+      //   pathRewrite: {
+      //     '^/chapter': '/chapter'          //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://10.1.5.11:8080/xxx/duty?time=2017-07-07 14:57:22'，直接写‘/api/xxx/duty?time=2017-07-07 14:57:22’即可
+      //   }
 
+      // }
+
+      '/api': {  //使用"/api"来代替"http://f.apiplus.c" 
+        target: 'https://localhost:5001', //源地址 
+        //target: 'http://localhost:2780', //源地址 
+        secure: false,
+        changeOrigin: true, //改变源 
+        /*pathRewrite: { 
+          '^/api': '' //路径重写 
+          } */
       }
 
     },
